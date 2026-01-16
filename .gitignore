@@ -1,0 +1,53 @@
+# Assignment PDF (confidential)
+*.pdf
+
+# Flutter/Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+
+# IDE
+.idea/
+*.ipr
+*.iws
+.vscode/
+
+# macOS
+.DS_Store
+*.swp
+Icon?
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Secrets - NEVER COMMIT
+*.jks
+*.keystore
+key.properties
+google-services.json
+GoogleService-Info.plist
+
+# Build outputs
+*.apk
+*.aab
+*.ipa
+*.app
+
+# Test
+coverage/
+.test_coverage.dart
+
+# Logs
+*.log
+
+# Generated
+*.g.dart
+*.freezed.dart
+
+# FVM Version Cache
+.fvm/
