@@ -93,7 +93,7 @@ final router = GoRouter(
 
 ---
 
-## ADR-003: News API - GNews.io
+## ADR-003: News API - NewsData.io
 
 ### Context
 
@@ -101,32 +101,32 @@ Need public news API for fetching articles.
 
 ### Options Considered
 
-1. **NewsAPI.org** - Popular, good documentation
-2. **GNews.io** - Simpler, no CORS issues
-3. **NYTimes API** - Limited, US-focused
+1. **NewsAPI.org** - Popular, but CORS blocked in production
+2. **GNews.io** - Simple, but CORS only on paid plan
+3. **NewsData.io** - CORS support on free tier
 
 ### Decision
 
-Use GNews.io
+Use NewsData.io
 
 ### Rationale
 
-**NewsAPI CORS Issue:**
+**CORS Support:**
 ```
-NewsAPI blocks requests from browser in production.
-Only works in development mode.
-Would require backend proxy for production.
+NewsData.io supports CORS on free tier.
+Works directly from browser without proxy.
+Other APIs require paid plans or backend proxy.
 ```
 
-**GNews Advantages:**
+**NewsData.io Advantages:**
+- CORS enabled on free tier
 - Works directly from browser/app
 - Simple API, sufficient for demo
 - Free tier adequate for assessment
 
 ### Trade-offs
 
-- Less articles than NewsAPI
-- Fewer filtering options
+- Rate limited (200 requests/day on free tier)
 - Acceptable for demo purposes
 
 ---

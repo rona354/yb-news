@@ -54,7 +54,7 @@ Register → Login → OTP (shown in snackbar) → News List → News Detail
 - [x] Resend OTP countdown (MM:SS format)
 - [x] OTP expiry handling with clear error message
 - [x] **Single device login restriction** (new login invalidates previous sessions)
-- [x] News list from GNews API
+- [x] News list from NewsData.io API
 - [x] News detail page
 - [x] Search by title
 - [x] Category filter
@@ -89,7 +89,7 @@ Register → Login → OTP (shown in snackbar) → News List → News Detail
 | State Management | flutter_bloc | Scalable, testable |
 | Routing | go_router | Declarative routing |
 | HTTP Client | dio | Better error handling |
-| News API | GNews.io | No CORS issues |
+| News API | NewsData.io | CORS support on free tier |
 
 ---
 
@@ -118,24 +118,21 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed decisions.
 
 - Flutter 3.x
 - Dart 3.x
-- GNews API key (https://gnews.io/)
+- NewsData.io API key (https://newsdata.io/)
 
 ### Setup
 
 ```bash
 # Clone repository
-git clone [REPO_URL]
+git clone https://github.com/rona354/yb-news.git
 cd yb-news
 
 # Copy environment file
 cp .env.example .env
-# Edit .env and add your GNEWS_API_KEY
+# Edit .env and add your NEWS_API_KEY
 
 # Get dependencies
 flutter pub get
-
-# Run code generation (if using freezed)
-flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 ### Run
@@ -222,8 +219,7 @@ yb-news/
 │   ├── STUB_IMPLEMENTATIONS.md
 │   └── PRODUCTION_ROADMAP.md
 ├── LICENSE
-├── README.md
-└── PLAN.md
+└── README.md
 ```
 
 ---
