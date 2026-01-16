@@ -1,6 +1,9 @@
 # Assignment PDF (confidential)
 *.pdf
 
+# Claude config with secrets
+.claude/
+
 # Flutter/Dart
 .dart_tool/
 .packages
@@ -18,7 +21,7 @@ build/
 # macOS
 .DS_Store
 *.swp
-Icon?
+Icon\r
 
 # Environment
 .env
