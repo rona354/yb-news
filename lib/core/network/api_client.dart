@@ -4,7 +4,7 @@ import 'package:yb_news/core/constants/api_constants.dart';
 
 class ApiClient {
   late final Dio _dio;
-  static const String _corsProxy = 'https://corsproxy.io/?';
+  static const String _corsProxy = 'https://api.allorigins.win/raw?url=';
 
   ApiClient() {
     _dio = Dio(
