@@ -10,14 +10,14 @@ class NewsRepositoryImpl implements NewsRepository {
 
   @override
   Future<List<Article>> getTopHeadlines({
-    String category = 'general',
+    String category = 'top',
     String lang = 'en',
     int max = 10,
   }) async {
     return _remoteDatasource.getTopHeadlines(
       category: category,
-      lang: lang,
-      max: max,
+      language: lang,
+      size: max,
     );
   }
 
@@ -27,6 +27,6 @@ class NewsRepositoryImpl implements NewsRepository {
     String lang = 'en',
     int max = 10,
   }) async {
-    return _remoteDatasource.searchArticles(query: query, lang: lang, max: max);
+    return _remoteDatasource.searchArticles(query: query, language: lang, size: max);
   }
 }

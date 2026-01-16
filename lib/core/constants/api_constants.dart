@@ -1,11 +1,11 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ApiConstants {
-  static String get gnewsApiKey => dotenv.env['GNEWS_API_KEY'] ?? '';
-  static const String gnewsBaseUrl = 'https://gnews.io/api/v4';
+  static String get newsApiKey => dotenv.env['NEWS_API_KEY'] ?? '';
+  static const String newsBaseUrl = 'https://newsdata.io/api/1';
 
   static const List<String> apiCategories = [
-    'general',
+    'top',
     'technology',
     'business',
     'entertainment',
@@ -15,7 +15,7 @@ class ApiConstants {
   ];
 
   static const List<String> displayCategories = [
-    'general',
+    'top',
     'technology',
     'business',
     'finance',
@@ -25,14 +25,17 @@ class ApiConstants {
     'science',
   ];
 
-  static const Map<String, String> categoryApiMap = {'finance': 'business'};
+  static const Map<String, String> categoryApiMap = {
+    'finance': 'business',
+    'general': 'top',
+  };
 
   static String getApiCategory(String displayCategory) {
     return categoryApiMap[displayCategory] ?? displayCategory;
   }
 
   static const Map<String, String> categoryLabels = {
-    'general': 'General',
+    'top': 'General',
     'technology': 'Technology',
     'business': 'Business',
     'finance': 'Finance',

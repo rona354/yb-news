@@ -16,12 +16,12 @@ class ArticleModel extends Article {
     return ArticleModel(
       title: json['title'] ?? '',
       description: json['description'] ?? '',
-      content: json['content'] ?? '',
-      url: json['url'] ?? '',
-      imageUrl: json['image'] ?? '',
-      publishedAt: json['publishedAt'] ?? '',
-      sourceName: json['source']?['name'] ?? '',
-      sourceUrl: json['source']?['url'] ?? '',
+      content: json['content'] ?? json['description'] ?? '',
+      url: json['link'] ?? '',
+      imageUrl: json['image_url'] ?? '',
+      publishedAt: json['pubDate'] ?? '',
+      sourceName: json['source_name'] ?? json['source_id'] ?? '',
+      sourceUrl: json['source_url'] ?? '',
     );
   }
 
@@ -30,10 +30,11 @@ class ArticleModel extends Article {
       'title': title,
       'description': description,
       'content': content,
-      'url': url,
-      'image': imageUrl,
-      'publishedAt': publishedAt,
-      'source': {'name': sourceName, 'url': sourceUrl},
+      'link': url,
+      'image_url': imageUrl,
+      'pubDate': publishedAt,
+      'source_name': sourceName,
+      'source_url': sourceUrl,
     };
   }
 }

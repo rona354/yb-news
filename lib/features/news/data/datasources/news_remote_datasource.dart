@@ -9,20 +9,20 @@ class NewsRemoteDatasource {
     : _apiClient = apiClient ?? ApiClient();
 
   Future<List<ArticleModel>> getTopHeadlines({
-    String category = 'general',
-    String lang = 'en',
-    int max = 10,
+    String category = 'top',
+    String language = 'en',
+    int size = 10,
   }) async {
     final response = await _apiClient.get(
-      '/top-headlines',
+      '/news',
       queryParameters: {
         'category': ApiConstants.getApiCategory(category),
-        'lang': lang,
-        'max': max,
+        'language': language,
+        'size': size,
       },
     );
 
-    final articlesJson = response.data['articles'] as List? ?? [];
+    final articlesJson = response.data['results'] as List? ?? [];
     final articles = articlesJson
         .map((json) => ArticleModel.fromJson(json))
         .toList();
@@ -32,15 +32,19 @@ class NewsRemoteDatasource {
 
   Future<List<ArticleModel>> searchArticles({
     required String query,
-    String lang = 'en',
-    int max = 10,
+    String language = 'en',
+    int size = 10,
   }) async {
     final response = await _apiClient.get(
-      '/search',
-      queryParameters: {'q': query, 'lang': lang, 'max': max},
+      '/news',
+      queryParameters: {
+        'q': query,
+        'language': language,
+        'size': size,
+      },
     );
 
-    final articlesJson = response.data['articles'] as List? ?? [];
+    final articlesJson = response.data['results'] as List? ?? [];
     final articles = articlesJson
         .map((json) => ArticleModel.fromJson(json))
         .toList();
