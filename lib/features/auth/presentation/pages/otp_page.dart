@@ -139,11 +139,11 @@ class _OtpPageState extends State<OtpPage> {
           if (state is AuthAuthenticated) {
             context.go(AppRoutes.newsList);
           } else if (state is AuthOtpSent) {
-            if (kDebugMode && state.demoOtp != null) {
+            if (state.demoOtp != null) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text('Demo OTP: ${state.demoOtp}'),
-                  duration: const Duration(seconds: 10),
+                  duration: const Duration(seconds: 15),
                   backgroundColor: Colors.green,
                 ),
               );
