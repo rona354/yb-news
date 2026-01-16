@@ -15,7 +15,8 @@
 
 ## Demo
 
-- **Web:** [DEPLOY_LINK] (to be deployed)
+- **Web:** https://rona354.github.io/yb-news/
+- **Repository:** https://github.com/rona354/yb-news
 - **APK:** Available in `/build/app/outputs/flutter-apk/` after build
 
 ### Quick Start Demo
