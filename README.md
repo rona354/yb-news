@@ -1,4 +1,4 @@
-# YB News - Take Home Assessment
+# YB News
 
 > Flutter news application for PT Yakin Bertumbuh Sekuritas Front End Developer assessment.
 
